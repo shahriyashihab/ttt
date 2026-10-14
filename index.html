@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BotCraft Studio - Telegram Bot Store & Custom Development</title>
+    <meta name="description" content="Professional Telegram Bot showcase, custom bot orders with manual payment, and comprehensive admin management system." />
+    <meta property="og:title" content="BotCraft Studio - Telegram Bot Store & Custom Development" />
+    <meta property="og:description" content="Professional Telegram Bot showcase, custom bot orders with manual payment, and comprehensive admin management system." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/app.css" />
+  </head>
+  <body style="margin: 0; background-color: #0b0f19; color: #f8fafc; font-family: 'Plus Jakarta Sans', system-ui, sans-serif;">
+    <div id="root">
+      <div style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(circle at 50% 20%, #1e293b, #0b0f19); text-align: center; padding: 20px;">
+        <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #0284c7, #38bdf8); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m22 2-7 20-4-9-9-4Z"></path>
+            <path d="M22 2 11 13"></path>
+          </svg>
+        </div>
+        <h2 style="font-size: 20px; font-weight: 700; color: #38bdf8; margin: 0 0 8px 0; letter-spacing: -0.025em;">BotCraft Studio</h2>
+        <p style="font-size: 14px; color: #94a3b8; margin: 0;">Loading Telegram Bot Platform...</p>
+      </div>
+    </div>
+
+    <!-- Vite Dev Server Entry (Runs when running in AI Studio) -->
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Standalone Production Fallback (Runs when ZIP is uploaded to Free Hosting, InfinityFree, Apache, or cPanel) -->
+    <script>
+      function loadStaticFallback() {
+        if (window.__botcraft_loaded) return;
+        var s = document.createElement('script');
+        s.type = 'module';
+        s.src = './assets/app.js';
+        document.body.appendChild(s);
+      }
+
+      window.addEventListener('error', function(e) {
+        if (e && e.target && e.target.src && e.target.src.indexOf('/src/main.tsx') !== -1) {
+          loadStaticFallback();
+        }
+      }, true);
+
+      // Safe timeout for static hosting without Vite server
+      setTimeout(function() {
+        if (!window.__botcraft_loaded) {
+          loadStaticFallback();
+        }
+      }, 1200);
+    </script>
+  </body>
+</html>

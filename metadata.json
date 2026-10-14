@@ -1,0 +1,6 @@
+{
+  "name": "BotCraft Studio - Telegram Bot Store & Custom Development",
+  "description": "Professional Telegram Bot showcase, custom bot orders with manual payment, and comprehensive admin management system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
